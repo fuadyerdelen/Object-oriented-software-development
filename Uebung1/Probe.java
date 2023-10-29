@@ -74,7 +74,7 @@ import java.util.Scanner;
 		*int z einer "byte" zuweisen. 		
 		*/
 		
-		//int z= 222;
+		int z= 222;
 		//byte byte2= z;
 		
 		//System.out.println(byte2);
