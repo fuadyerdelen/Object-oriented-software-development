@@ -2,7 +2,7 @@ public class CalcWithIntAndFloat {
 
 	private static void calc(int cycles) {
 		
-		float f1 = 0.1f;
+		float f1 = 0.1f;   // big DEc 
 		float f2 = 0f;
 		
 		for(int i = 0; i < cycles; i++) {
