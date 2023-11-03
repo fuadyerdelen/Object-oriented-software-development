@@ -66,9 +66,9 @@ import java.util.Scanner;
 		* Beim Variable "byte" können wir nicht etwas addieren 
 		*/
 		
-		 byte byte1= 122;
-		 byte1= b + byte1;
-		 byte1= a + byte1;
+//		 byte byte1= 122;
+//		 byte1= b + byte1;
+//		 byte1= a + byte1;
 		
 		// System.out.println(byte1);
 
