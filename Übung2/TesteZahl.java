@@ -41,7 +41,7 @@ public class TesteZahl{
 	public static void main(String[] args){
 			
 		 int z= -17;
-		
+		//methode aufrufen
 		 boolean erg= isPrim(z);
 		 
 		 System.out.println ("Die Zahl " +z+ " ist " +( (erg == true) ? "eine" : "keine" )+ " Primzahl." );

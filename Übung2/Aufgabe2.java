@@ -18,15 +18,15 @@ public class Aufgabe2 {
         j = scan.nextInt();
 
         int w = 0;
+        if ((m <= 2) && (j <= 2)) {
 
+                    m += 12;
+                    j -= 1;
+                }
 // Hier nutze ich die Berechnung der Wochentage.
         w = (tag + 2 * m + (3 * m + 3) / 5 + j + j / 4 - j / 100 + j / 400 + 1) % 7;
 
-        if ((m <= 2) && (j <= 2)) {
-
-            m += 12;
-            j -= 1;
-        }
+        
 // Hier setze ich die Variable Wochentage als String.
         String wochenTage;
 
