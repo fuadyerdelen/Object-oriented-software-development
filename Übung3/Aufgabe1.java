@@ -8,24 +8,24 @@ public class Aufgabe1 {
     public static void main(String[] args) {
 
         /*
-         * wenn wir Commadezahlen ivon Console lesen wollen, dann brauchen wir
+         * wenn wir Commadezahlen von Console lesen wollen, dann brauchen wir
          * "useLocale(Locale.US)"
          */
 
         Scanner scan = new Scanner(System.in).useLocale(Locale.US);
         System.out.println("Bitte geben Sie drei Gleitkommazahlen ein: ");
-
+// Hier lese ich die Zahlen von Console
         double nummer1 = scan.nextDouble();
         double nummer2 = scan.nextDouble();
         double nummer3 = scan.nextDouble();
         scan.close();
-
+// Hier rufe ich die Methoden auf
         maximale(nummer1, nummer2, nummer3);
         minimale(nummer1, nummer2, nummer3);
         durschnitt(nummer1, nummer2, nummer3);
     }
 
-    // hier definiere ich die maximale Zahl
+// Hier definiere ich Methode für maximale Zahl
     public static void maximale(double nummer1, double nummer2, double nummer3) {
         double maxNummer = 0;
 
@@ -41,7 +41,7 @@ public class Aufgabe1 {
 
     }
 
-    // hier definiere ich die minimale Zahl
+// Hier definiere ich Methode für minimale Zahl
     public static void minimale(double nummer1, double nummer2, double nummer3) {
         double minNummer = 0;
 
@@ -56,7 +56,7 @@ public class Aufgabe1 {
         System.out.println("Die minimale Zahl ist " + minNummer);
     }
 
-    // hier definiere ich den Durschnitt
+// Hier definiere ich Methode für Durschnitt
     public static void durschnitt(double nummer1, double nummer2, double nummer3) {
         double durschnitt = 0;
 
