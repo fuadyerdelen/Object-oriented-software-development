@@ -41,7 +41,7 @@ public class Aufgabe3 {
 
     // In main Method rufe ich den Methoden mit Paremeters auf
     public static void main(String[] args) {
-        sumEvenNums(6);
+        sumEvenNums(78);
         sumEvenOrOddNums(9, true);
     }
 
