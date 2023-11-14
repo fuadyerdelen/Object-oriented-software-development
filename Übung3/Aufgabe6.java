@@ -4,7 +4,7 @@ public class Aufgabe6 {
 
     public static void main(String[] args) {
 
-        System.out.println(karten(13));
+        System.out.println(karten(10));
 
     }
 
