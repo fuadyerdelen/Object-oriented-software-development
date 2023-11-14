@@ -16,6 +16,8 @@ public class Aufgabe4 {
         } else {
             // Hier habe ich meine rekursive Methode zum caunter-Parameter hinzugefügt, um die Summe der geraden Zahlen
             // mit dem nächsten Ergebnis zu sammeln.
+
+
             return counter + sumEvenNumsRecursive(counter - 1);
         }
     }
@@ -26,7 +28,7 @@ public class Aufgabe4 {
             return 0;
             // in hier addiere ich den alle gerade Zahlen bis Varieable z 
         } else if (blnSumOdds) { // ----> Das funktioniert, weil wenn blnSummOdds "false" ist, geht die Bedingung nach else
-                                 
+
             if (counter % 2 == 0) {
                 return counter + sumEvenOrOddNumsRecursive(counter - 1, true);
             } else {
