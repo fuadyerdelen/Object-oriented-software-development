@@ -14,28 +14,28 @@ public class Aufgabe3 {
     }
 
     // Aufgabe3.b
-    static void sumEvenOrOddNums(int z, boolean blnSumOdds) {
+    static int sumEvenOrOddNums(int z, boolean blnSumOdds) {
         int erg = 0;
 
         for (int i = 1; i <= z; i++) {
             // Hier defienire ich if bedingung für die blnSumOdds, ob es true oder false ist
             if (blnSumOdds == true) {
                 // Wenn es false ist addiere ich den alle gerade Zahlen bis Varieable z
-                if (i % 2 == 0) {
+                if (i % 2 != 0) {
                     erg += i; // erg = erg + i;
                 }
                 // Hier defienire ich if bedingung für die blnSumOdds, ob es true oder false ist
 
             } else if (blnSumOdds == false) {
                 // Wenn es false ist addiere ich den alle ungerade Zahlen bis Varieable z
-                if (i % 2 != 0) {
+                if (i % 2 == 0) {
                     erg += i; // erg = erg + i;
                 }
 
             }
         }
 
-        System.out.println(erg);
+        return erg;
 
     }
 
