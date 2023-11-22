@@ -1,42 +1,26 @@
-
 package Übung4;
-
-import java.util.*;
 
 public class Aufgabe2 {
 
+    // Aufgabe 2.a
+    public static int[] feld = new int[0]; // { 1, 2, 3, 4, 5 }; //---> zum testen
+
+    // Aufgabe 2.d
     public static void main(String[] args) {
-        // Aufgbabe 2.d
-        // add(num());
+
+        add(1);
+        add(2);
+
+        find(3);
 
         // Aufgabe 2.f
         // System.out.println(find(3));
 
+        // Aufgabe 2.f
+
         remove(3);
-        System.out.println(remove(3));
-        System.out.println("Erhaltene Feldwerte: ");
-
-        for (int i = 0; i < feld.length; i++) {// ------> für Ausgabe von Array
-            System.out.print(feld[i]);
-            if (i < feld.length - 1) {
-                System.out.print(", ");
-            }
-        }
-
+        asugabeArray();
     }
-
-    // Aufgabe 2.c
-    public static int num() {
-        int zahl = 0;
-        System.out.println("Gieb mir ein Zahl!!");
-        Scanner scan = new Scanner(System.in);
-        zahl = scan.nextInt();
-        scan.close();
-        return zahl;
-    }
-
-    // Aufgabe 2.a
-    public static int[] feld = { 1, 2, 3, 4, 5 }; // new int[0]; ---> zum testen
 
     // Aufgabe 2.b
     public static void add(int z) {
@@ -67,7 +51,7 @@ public class Aufgabe2 {
     // Aufgabe 2.g
     public static boolean remove(int z) {
 
-        int findIndex = find(z);
+        int findIndex = find(z); // -----> speichere ich, was die Indexnummer von "z"
 
         int[] f1 = new int[feld.length - 1];
 
@@ -75,15 +59,39 @@ public class Aufgabe2 {
         for (int i = 0; i < feld.length; i++) {
 
             if (i == findIndex) {
-                f1[i+1] = feld[i];
+                f1[i + 1] = feld[i];
 
                 return true;
             }
             f1[i] = feld[i];
+
         }
 
         feld = f1;
         return false;
+    }
+
+    // Aufgabe 2.i
+    public static void addField(int[] f) {
+        int f1[] = new int[feld.length + f.length];
+        for (int i = 0; i < feld.length; i++) {
+            f1[i + 1] = feld[i];
+        }
+
+        feld = f1;
+    }
+
+    // Aufgabe 2.c
+    public static void asugabeArray() {
+
+        System.out.println("Erhaltene Feldwerte: ");
+
+        for (int i = 0; i < feld.length; i++) {// ------> für Ausgabe von Array
+            System.out.print(feld[i]);
+            if (i < feld.length - 1) {
+                System.out.print(", ");
+            }
+        }
     }
 
 }
