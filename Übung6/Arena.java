@@ -40,44 +40,64 @@ public class Arena {
 
         // hier wird ein Objekt der Klasse Gladiator erzeugt. Die Attribute habe ich
         // zuverlessig gestellt.
-        _gladiator1 = new Gladiator(gladiatorenNamen[w20Erg - 1], 12, 8, 0, 30);
+        _gladiator1 = new Gladiator(gladiatorenNamen[w20Erg - 1]);
         w20Erg = w20.wuerfle(); // ----> Hier musste ich nochmal würfeln, weil ich ein anderes Ergebnis brauche.
-        _gladiator2 = new Gladiator(gladiatorenNamen[w20Erg - 1], 5, 5, 0, 65);
+        _gladiator2 = new Gladiator(gladiatorenNamen[w20Erg - 1]);
 
-        System.out.println(_gladiator1._name + " vs " + _gladiator2._name);
+        System.out.println(_gladiator1.get_name() + " vs " + _gladiator2.get_name());
+        System.out.println();
     }
 
     // Aufgabe 3.d
-    public boolean starteKampfRunde() {
+    public boolean starteKampfRunde(Gladiator angr, Gladiator vert) {
 
-        Wuerfel w6 = new Wuerfel(6);
-        int w6Erg = w6.wuerfle();
+        // boolean kampffaehig = true;
+
+        // diese Wuerfelmethoden sind nicht mehr notwendig, weil wir die Methode aus der Klasse Waffe benutzen.
+        
+        //Wuerfel w6 = new Wuerfel(6);
+        //int w6Erg = w6.wuerfle();
+
+        String angrStr = "-";
+        String vertStr = "-";
+        boolean hitSuccessful = false;
+
+        int schaden = 0;
 
         // Wenn Gladiator1 attack erfolgreich (ture) ist, gebe ich den Konsole X. Wenn
         // nicht -.
-        System.out.println((_gladiator1.attacke() == true) ? "X" : "-");
-        System.out.print((_gladiator2.parade() == true) ? "O" : "-");
+        if (angr.attacke()) {
+            angrStr = "X";
+
+            if (vert.parade()) {
+                vertStr = "O";
+            } else {
+                hitSuccessful = true;
+            }
+        }
 
         // Wenn Gladiator2 parade erfolgreich (ture) ist, gebe ich den Konsole O. Wenn
         // nicht -.
-        System.out.println((_gladiator2.attacke() == true) ? "X" : "-");
-        System.out.print((_gladiator1.parade() == true) ? "O" : "-");
-
+        if (angr == _gladiator1) {
+            System.out.printf("%-20s%-20s", angrStr, vertStr);
+        } else {
+            System.out.printf("%-20s%-20s", vertStr, angrStr);
+        }
         /*
          * Wenn ein Gladiator attack erfolgreich (ture) ist und andere Gladiator
          * paradiert nicht (false), dann nimmt Schaden mit w6Erg(Würfel mit 6-Seitigen).
          */
-        if (_gladiator1.attacke() == true && _gladiator2.parade() == false) {
+        if (hitSuccessful) {
 
-            _gladiator2.nehmeScahden(w6Erg);
-            System.out.print(" " + w6Erg);
-            return (_gladiator2.nehmeScahden(w6Erg) == false) ? true : false;
+            // Schadensberechnung
+            schaden = angr.waffe.calcTrefferPunkte();
+            System.out.println(schaden);
 
-        } else if (_gladiator2.attacke() == true && _gladiator1.parade() == false) {
-            _gladiator1.nehmeScahden(w6Erg);
-            System.out.print(" " + w6Erg);
-            return (_gladiator1.nehmeScahden(w6Erg) == false) ? true : false;
-
+            if (!vert.nehmeSchaden(schaden)) {
+                return false;
+            }
+        } else {
+            System.out.println();
         }
 
         return true;
@@ -93,19 +113,10 @@ public class Arena {
          * Gladiator tot oder kampfunfähig ist. Das heißt, dass die Methode
          * starteKampfRunde() solange aufgerufen wird, bis sie false zurückgibt.
          */
-        while (arena.starteKampfRunde()) {
+        while (arena.starteKampfRunde(arena._gladiator1, arena._gladiator2)) {
 
         }
-        /*
-         * Diese if-else Bedingung gibt den Namen des Gladiators, der tot ist.
-         * Sie müssen am ende des Kampfes sein, weil wenn nicht, dann wird immer der
-         * Name des Gladiators, der tot ist, gegeben.
-         */
-        if (arena._gladiator1._le < 0) {
-            System.out.println(arena._gladiator1._name + " ist tot.");
-        } else {
-            System.out.println(arena._gladiator2._name + " ist tot.");
-        }
+        
     }
 
 }

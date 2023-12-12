@@ -13,12 +13,13 @@ public class Wuerfel {
     public int wuerfle() {
         return (int) (Math.random() * _seiten) + 1;// -----> (int) (Math.random() * _seiten) gibt eine zufällige Zahl zwischen 0 und _seiten zurück.
                                                   // -----> (int) (Math.random() * _seiten) + 1 gibt eine zufällige Zahl zwischen 1 und _seiten + 1 zurück.
-    }
+    }     
 
     // Hauptmethode zum Testen
     public static void main(String[] args) {
         // Erzeuge einen 6-seitigen Würfel
         Wuerfel Wuerfel6 = new Wuerfel(6); //-----> Hier wird ein Objekt der Klasse Wuerfel erzeugt.
+        // damit kann ich die Methoden der Klasse Wuerfel mit dem Attribute seiten(6) benutzen.
 
         // Würfele und gebe Ergebnisse aus
         System.out.println("Ergebnisse des 6-seitigen Würfels:");
@@ -29,6 +30,7 @@ public class Wuerfel {
 
         // Erzeuge einen 20-seitigen Würfel
         Wuerfel Wuerfel20 = new Wuerfel(20);  //-----> Hier wird ein Objekt der Klasse Wuerfel erzeugt.
+        // damit kann ich die Methoden der Klasse Wuerfel mit dem Attribute seiten(20) benutzen.
 
         // Würfele und gebe Ergebnisse aus
         System.out.println("\nErgebnisse des 20-seitigen Würfels:");
