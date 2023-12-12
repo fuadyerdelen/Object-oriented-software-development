@@ -1,8 +1,9 @@
 package Übung7;
 
-public @interface IKraftstoffFahrzeug {
+public interface IKraftstoffFahrzeug {
 
-    boolean brauchtKraftstoff();
+    boolean brauchtInspektion();
+
+    void inspektionDurchgeführt();
     
 }
-
