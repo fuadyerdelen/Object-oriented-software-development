@@ -2,12 +2,12 @@ package Übung7;
 
 public class Fahrrad extends Fahrzeug {
 
-    public Fahrrad(String name, float kilometerstand, boolean belegt) {
+    public Fahrrad(String name, float kilometerstand) {
         /*
          * Hier habe ich den Konstruktor mit super erstellt. Damit ich die Attribute von
          * der oberen Klassen ausgleichen kann.
          */
-        super(name, kilometerstand, belegt);
+        super(name, kilometerstand);
     }
 
     // Hier schreibe ich die Methode maxReichweite() über.

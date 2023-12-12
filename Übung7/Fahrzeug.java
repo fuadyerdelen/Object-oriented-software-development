@@ -7,15 +7,15 @@ public class Fahrzeug {
     protected float kilometerstand;
     protected boolean belegt;
 
-    // Hier habe ich den Konstruktor erstellt.
-    public Fahrzeug(String name, float kilometerstand, boolean belegt) {
+    // Hier habe ich den Konstruktor erstellt. Mit den Attributen name und kilometerstand.
+    public Fahrzeug(String name, float kilometerstand) {
         this.name = name;
         this.kilometerstand = kilometerstand;
         this.belegt = false;
     }
 
     // 2.b
-    // Hier habe ich getter für die Attribute erstellt.
+    // Hier habe ich getter für die alle Attribute erstellt.
     public String getName() {
         return name;
     }
@@ -68,7 +68,7 @@ public class Fahrzeug {
          * Hier habe ich fahrzeug erstellt, damit ich in obj die Attributen von Fahrzeug
          * vergleichen kann.
          */
-        Fahrzeug fahrzeug = new Fahrzeug(name, kilometerstand, belegt);
+        Fahrzeug fahrzeug = new Fahrzeug(name, kilometerstand);
 
         // Hier habe ich die Attribute von Fahrzeug verglichen.
         if (obj instanceof Fahrzeug && fahrzeug.name.equals(this.name)
