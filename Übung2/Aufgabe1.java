@@ -9,7 +9,7 @@ public class Aufgabe1 {
         try {
 // Hier benutze ich Scanner, um die Zahlen von der Tastatur zu lesen.
             Scanner scan = new Scanner(System.in);
-
+            scan.close();
             System.out.println("Geben Sie mir bitte drie Zahlen ...");
 // Hier lese ich die Zahlen von der Tastatur.
             int nummer1 = scan.nextInt();

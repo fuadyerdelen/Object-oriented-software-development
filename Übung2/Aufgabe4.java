@@ -6,6 +6,7 @@ public class Aufgabe4 {
 		// Hier nehme ich den gegebene Nummer ein
 
 		Scanner scan = new Scanner(System.in);
+		scan.close();
 		System.out.println("tippen sie ein Nummer bitte ..");
 		int num = scan.nextInt();
 

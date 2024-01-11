@@ -15,7 +15,7 @@ public class TesteZahl{
 			return true;
 		}
 
-		int zahlDurchDiv= zahl / divisor; // Erg was in Z. 22 berechnet wird.
+		//int zahlDurchDiv= zahl / divisor; // Erg was in Z. 22 berechnet wird.
 		if( (zahl % divisor) == 0){
 			return false;
 		}

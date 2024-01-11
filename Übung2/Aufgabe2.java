@@ -9,6 +9,7 @@ public class Aufgabe2 {
         int j = 0;
 // Hier benutze ich Scanner, um die Zahlen von der Tastatur zu lesen.
         Scanner scan = new Scanner(System.in);
+        scan.close();
 // Hier lese ich die Zahlen von der Tastatur.
         System.out.println("Tippen Sie bitte der Tag");
         tag = scan.nextInt();
